@@ -1,42 +1,295 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f49b;
+    color: #333;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+a{
+    text-decoration: none;
+    color: #333;
+
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.h1, h2, h3 {
+    font-weight: bold;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header{
+    background-color: #e40b86;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    font-size: 24px;
+    color: white;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.header nav{
+    display: flex;
+    gap: 40px;
+}
+.header nav a{
+    color: white;
+    font-weight: bold;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.header nav a:hover{
+    text-decoration: underline;
+}
+footer{
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+footer p {
+    margin: 0;
+}
+
+/* hOMEPAGE STYLE */
+
+.hero{
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    padding-left: 60px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero p{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:#e40b86 ;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3 ease;
+
+}
+
+.hero button:hover{
+    background-color: palevioletred;
+
+}
+
+/* about page style */
+.about{
+    background-position: center;
+    padding: 80px 20px;
+    height: 94vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.about-content{
+    max-width: 999vh;
+    background: rgba(247, 183, 238, 0.2);
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+
+}
+.fade-in{
+    font-size: 40px;
+    color: #af0d84;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.fade-out{
+    font-size: 25px;
+    color: rgb(107, 79, 69); 
+    padding: 10px;
+    text-decoration: underline;
+}
+.about-content p {
+    padding-top: 20px;
+    
+}
+
+/* makeup style */
+.makeup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    margin: 50px;
+}
+
+.makeup-card {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.makeup-card h3{
+    margin-top: 10px;
+}
+.makeup-card img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+.makeup-card p {
+    color:  #555;
+    font-size: 14px;
+}
+
+.makeup-card .price{
+    font-size: 20px;
+    font-weight: bold;
+    color: #af0d84;
+}
+.makeup-card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #af0d84;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.makeup-card button:hover{
+    background-color: palevioletred;
+}
+
+.makeup-card img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.makeup-card:hover img{
+    transform: scale(1.2);
+}
+
+/* Contact styling */
+.contact-form {
+    text-align:center;
+    max-width: 700px;
+    margin: 70px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input, .contact-form textarea{
+    width: 100vh;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #af0d84;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    width: 100%;
+}
+.contact-form button:hover{
+    background-color: palevioletred;
+}
+
+/* fade in animation */
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation:fadeIn 1s ease-out forwards ;
+}
+.hero h1{
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards ;
+}
+
+/* responsive styling */
+
+@media (max-width:768){
+    .header{
+        flex-direction:column;
+        text-align: center;
+    }
+    .header nav {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .header .logo{
+        margin-bottom: 10px;
+    }
+    .hero{
+        height: 70vh;
+        padding: 20px;
+        text-align: center;
+    }
+    .hero h1{
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .hero button{
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .makeup{
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    .about{
+        padding: 40px 20px;
+        height: auto;
+    }
+    .about-content{
+        width: 100%;
+        padding: 20px;
+    }
+    .contact-form{
+        margin: 20px;
+        padding: 20px;
+    }
 }
